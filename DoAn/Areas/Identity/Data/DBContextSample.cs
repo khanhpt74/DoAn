@@ -22,11 +22,11 @@ public class DBContextSample : IdentityDbContext<SampleUser>
         builder.ApplyConfiguration(new ApplicationUserEntityConfiguration());
     }
 }
-public class ApplicationUserEntityConfiguration : IEntityTypeConfiguration<SampleUser>
+public class ApplicationUserEntityConfiguration : IEntityTypeConfiguration<SampleUser >
 {
     public void Configure(EntityTypeBuilder<SampleUser> builder)
     {
-        builder.Property(x => x.FirstName).HasMaxLength(100);
-        builder.Property(x => x.LastName).HasMaxLength(100);
+        builder.Property(x => x.FirstName).HasMaxLength(255);
+        builder.Property(x => x.LastName).HasMaxLength(255);
     }
 }
